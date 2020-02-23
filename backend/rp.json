@@ -1,8 +1,170 @@
 [
-    {
-        "date": "01/14/2019",
-        "short_title": "Public Law 115-442",
-        "long_title": "Affecting titles 2, 5, 7, 12, 15, 16, 18, 19, 20, 21, 22, 25, 31, 33, 34, 39, 40, 42, 43, 47",
-        "url": "https://uscode.house.gov/download/releasepoints/us/pl/115/442/xml_uscAll@115-442.zip"
-    }
+  {
+    "short_title": "Public Law 115-442",
+    "date": "01/14/2019",
+    "long_title": "Affecting titles 2, 5, 7, 12, 15, 16, 18, 19, 20, 21, 22, 25, 31, 33, 34, 39, 40, 42, 43, 47.",
+    "href": "releasepoints/us/pl/115/442/usc-rp@115-442.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/115/442/xml_uscAll@115-442.zip"
+  },
+  {
+    "short_title": "Public Law 116-10",
+    "date": "03/21/2019",
+    "long_title": "Affecting titles 1, 2, 3, 5, 5A, 7, 8, 12, 15, 16, 20, 21, 22, 23, 25, 26, 28, 30, 31, 33, 34, 36, 40, 42, 43, 48, 49, 50, 51, 54.",
+    "href": "releasepoints/us/pl/116/10/usc-rp@116-10.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/10/xml_uscAll@116-10.zip"
+  },
+  {
+    "short_title": "Public Law 116-12",
+    "date": "04/08/2019",
+    "long_title": "Affecting title 38.",
+    "href": "releasepoints/us/pl/116/12/usc-rp@116-12.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/12/xml_uscAll@116-12.zip"
+  },
+  {
+    "short_title": "Public Law 116-13",
+    "date": "04/12/2019",
+    "long_title": "Affecting title 20.",
+    "href": "releasepoints/us/pl/116/13/usc-rp@116-13.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/13/xml_uscAll@116-13.zip"
+  },
+  {
+    "short_title": "Public Law 116-16",
+    "date": "04/18/2019",
+    "long_title": "Affecting title 42.",
+    "href": "releasepoints/us/pl/116/16/usc-rp@116-16.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/16/xml_uscAll@116-16.zip"
+  },
+  {
+    "short_title": "Public Law 116-17",
+    "date": "05/10/2019",
+    "long_title": "Affecting title 16.",
+    "href": "releasepoints/us/pl/116/17/usc-rp@116-17.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/17/xml_uscAll@116-17.zip"
+  },
+  {
+    "short_title": "Public Law 116-18",
+    "date": "05/23/2019",
+    "long_title": "Affecting title 34.",
+    "href": "releasepoints/us/pl/116/18/usc-rp@116-18.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/18/xml_uscAll@116-18.zip"
+  },
+  {
+    "short_title": "Public Law 116-19",
+    "date": "05/31/2019",
+    "long_title": "Affecting titles 25, 42.",
+    "href": "releasepoints/us/pl/116/19/usc-rp@116-19.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/19/xml_uscAll@116-19.zip"
+  },
+  {
+    "short_title": "Public Law 116-20",
+    "date": "06/06/2019",
+    "long_title": "Affecting titles 7, 42.",
+    "href": "releasepoints/us/pl/116/20/usc-rp@116-20.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/20/xml_uscAll@116-20.zip"
+  },
+  {
+    "short_title": "Public Law 116-21",
+    "date": "06/12/2019",
+    "long_title": "Affecting title 2.",
+    "href": "releasepoints/us/pl/116/21/usc-rp@116-21.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/21/xml_uscAll@116-21.zip"
+  },
+  {
+    "short_title": "Public Law 116-29",
+    "date": "07/05/2019",
+    "long_title": "Affecting titles 2, 6, 7, 15, 16, 19, 21, 26, 34, 38, 42, 43, 48, 49, 50.",
+    "href": "releasepoints/us/pl/116/29/usc-rp@116-29.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/29/xml_uscAll@116-29.zip"
+  },
+  {
+    "short_title": "Public Law 116-33",
+    "date": "07/25/2019",
+    "long_title": "Affecting titles 12, 18, 26, 28, 34, 38, 40, 44.",
+    "href": "releasepoints/us/pl/116/33/usc-rp@116-33.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/33/xml_uscAll@116-33.zip"
+  },
+  {
+    "short_title": "Public Law 116-34",
+    "date": "07/29/2019",
+    "long_title": "Affecting titles 10, 36, 49.",
+    "href": "releasepoints/us/pl/116/34/usc-rp@116-34.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/34/xml_uscAll@116-34.zip"
+  },
+  {
+    "short_title": "Public Law 116-35",
+    "date": "07/30/2019",
+    "long_title": "Affecting title 36.",
+    "href": "releasepoints/us/pl/116/35/usc-rp@116-35.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/35/xml_uscAll@116-35.zip"
+  },
+  {
+    "short_title": "Public Law 116-38",
+    "date": "08/02/2019",
+    "long_title": "Affecting titles 2, 19, 31, 38.",
+    "href": "releasepoints/us/pl/116/38/usc-rp@116-38.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/38/xml_uscAll@116-38.zip"
+  },
+  {
+    "short_title": "Public Law 116-56",
+    "date": "08/23/2019",
+    "long_title": "Affecting titles 5, 11, 13, 15, 20, 28, 38, 42.",
+    "href": "releasepoints/us/pl/116/56/usc-rp@116-56.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/56/xml_uscAll@116-56.zip"
+  },
+  {
+    "short_title": "Public Law 116-57",
+    "date": "09/22/2019",
+    "long_title": "Affecting titles 19, 23.",
+    "href": "releasepoints/us/pl/116/57/usc-rp@116-57.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/57/xml_uscAll@116-57.zip"
+  },
+  {
+    "short_title": "Public Law 116-59",
+    "date": "09/27/2019",
+    "long_title": "Affecting titles 18, 26, 38, 42.",
+    "href": "releasepoints/us/pl/116/59/usc-rp@116-59.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/59/xml_uscAll@116-59.zip"
+  },
+  {
+    "short_title": "Public Law 116-63",
+    "date": "10/04/2019",
+    "long_title": "Affecting titles 29, 38, 42.",
+    "href": "releasepoints/us/pl/116/63/usc-rp@116-63.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/63/xml_uscAll@116-63.zip"
+  },
+  {
+    "short_title": "Public Law 116-65",
+    "date": "10/09/2019",
+    "long_title": "Affecting titles 6, 31.",
+    "href": "releasepoints/us/pl/116/65/usc-rp@116-65.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/65/xml_uscAll@116-65.zip"
+  },
+  {
+    "short_title": "Public Law 116-68",
+    "date": "11/08/2019",
+    "long_title": "Affecting titles 31, 33, 36, 41, 42.",
+    "href": "releasepoints/us/pl/116/68/usc-rp@116-68.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/68/xml_uscAll@116-68.zip"
+  },
+  {
+    "short_title": "Public Law 116-72",
+    "date": "11/25/2019",
+    "long_title": "Affecting titles 5, 15, 18, 26, 31, 34, 42, 50.",
+    "href": "releasepoints/us/pl/116/72/usc-rp@116-72.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/72/xml_uscAll@116-72.zip"
+  },
+  {
+    "short_title": "Public Law 116-78",
+    "date": "12/05/2019",
+    "long_title": "Affecting titles 18, 21, 22, 28, 40.",
+    "href": "releasepoints/us/pl/116/78/usc-rp@116-78.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/78/xml_uscAll@116-78.zip"
+  },
+  {
+    "short_title": "Public Law 116-91",
+    "date": "12/19/2019",
+    "long_title": "Affecting titles 18, 20, 26.",
+    "href": "releasepoints/us/pl/116/91/usc-rp@116-91.htm",
+    "url": "https://uscode.house.gov/download/releasepoints/us/pl/116/91/xml_uscAll@116-91.zip"
+  }
 ]

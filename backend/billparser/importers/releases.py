@@ -46,6 +46,7 @@ if __name__ == "__main__":
             effective_date=datetime.strptime(rp.get("date"), "%m/%d/%Y"),
             long_title=rp.get("long_title"),
             version_id=new_version.version_id,
+            data_url=rp.get("url")
         )
         session.add(release_point)
         session.commit()

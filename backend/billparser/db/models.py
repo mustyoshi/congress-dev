@@ -236,6 +236,7 @@ class USCRelease(Base):
     short_title = Column(String)
     effective_date = Column(Date)
     long_title = Column(String)
+    data_url = Column(String)
 
     created_at = Column(DateTime(timezone=False), server_default=func.now())
     version_id = Column(Integer, ForeignKey("version.version_id", ondelete="CASCADE"))

@@ -29,7 +29,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<enumeration values="IS,IH,RAS,RAH,RFS,RFH,RDS,RHS,RCS,RCH,RS,RH,PCS,PCH,CPS,CPH,EAS,EAH,ES,EH,ENR"/>
 </usertype>
 
-<table name="usc_release" layer="0" collapse-mode="2" max-obj-count="7">
+<table name="usc_release" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<comment><![CDATA[https://uscode.house.gov/download/priorreleasepoints.htm]]></comment>
@@ -53,9 +53,22 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="created_at" default-value="now()">
 		<type name="timestamp" length="0"/>
 	</column>
+	<column name="data_url">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[Storage of the zip file]]></comment>
+	</column>
 	<constraint name="usc_release_pk" type="pk-constr" table="public.usc_release">
 		<columns names="usc_release_id" ref-type="src-columns"/>
 	</constraint>
+
+	<customidxs object-type="column">
+		<object name="version_id" index="5"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="usc_release_uq" index="2"/>
+		<object name="version_fk" index="1"/>
+	</customidxs>
 </table>
 
 <usertype name="legislation_chamber" configuration="enumeration">
