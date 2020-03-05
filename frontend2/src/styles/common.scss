@@ -2,7 +2,10 @@
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
 
-
+#root {
+  height: 100vh;
+  overflow-y: hidden;
+}
 .usc-release-box {
   width: 400px;
   border-radius: 10px;
@@ -14,29 +17,94 @@
   vertical-align: top;
 }
 
-.content {
+#bill-search-content-holder {
+  width: 80%;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  display: inline-block;
+  overflow-y: scroll;
+  height: calc(100vh - 180px);
+}
+#bill-viewer-content {
+  overflow-y: scroll;
   display: inline-block;
   vertical-align: top;
   width: 80%;
+  height: calc(100vh - 150px);
 }
 
+.content-holder {
+  width: 80%;
+  display: inline-block;
+}
 .main-navbar {
   margin-bottom: 10px;
 }
 
 .search-content {
-  width:80%;
+  width: 80%;
   margin-left: 10%;
+  height: calc(100vh - 150px);
 }
 
 .section-tree div {
   height: auto;
 }
-.section-tree div span{
+.section-tree div span {
   white-space: normal;
   cursor: pointer;
 }
 
-.link>div:first-child>span:nth-child(3){
+.link > div:first-child > span:nth-child(3) {
   cursor: pointer;
+}
+
+.minimap {
+  position: absolute;
+  margin-left: 20px;
+  top: 0px;
+  z-index: 100;
+  height: calc(1000vh - 1500px);
+  //font-size: 10%;
+  width: 100%;
+  transform: scale(0.1);
+  transform-origin: 0 0;
+  display: inline-block;
+}
+.minimap * {
+  overflow: none;
+  user-select: none;
+  cursor: pointer;
+}
+// .minimap .bill-content-section,
+// .minimap .bill-content-continue {
+//   margin-left: 2px;
+// }
+
+.bill-content-section {
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
+
+.bill-content-quoted-block {
+  padding-top: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: gray;
+  background-color: lightgray;
+}
+
+.bill-content-continue {
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
+
+#minimap-highlight {
+  z-index: 101;
+  margin-left: -10%;
+  width: 100%;
+  background-color: rgba(125, 125, 125, 0.5);
+  position: absolute;
 }

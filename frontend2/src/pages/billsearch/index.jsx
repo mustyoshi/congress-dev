@@ -109,7 +109,7 @@ function BillSearch(props) {
           })}
         </CollapseableSection>
       </div>
-      <div className="content" style={{ paddingLeft: "20px" }}>
+      <div id="bill-search-content-holder">
         <BillSearchContent
           congress={currentSearch.congress}
           chamber={currentSearch.chamber}

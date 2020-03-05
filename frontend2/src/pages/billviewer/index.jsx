@@ -31,17 +31,30 @@ function BillViewer(props) {
     uscSection,
   } = props.match.params;
 
-  const [billVers, setBillVers] = useState(defaultVers[chamber.toLowerCase()]);
+  const [billVers, setBillVers] = useState(
+    billVersion || defaultVers[chamber.toLowerCase()]
+  );
   useEffect(() => {
     // Grab the info from the rest API
 
     if (props.location.pathname.includes("diffs")) {
       setDiffMode(true);
-      getBillVersionDiffForSection(congress, chamber, billNumber, billVersion, uscTitle, uscSection).then(setDiffs);
+      getBillVersionDiffForSection(
+        congress,
+        chamber,
+        billNumber,
+        billVersion,
+        uscTitle,
+        uscSection
+      ).then(setDiffs);
     } else {
       // If we didn't get a bill version, default to the introduced one.
       if (billVersion === undefined) {
-        setBillVers(defaultVers[chamber.toLowerCase()]);
+        if (bill.legislation_versions !== undefined) {
+          setBillVers(bill.legislation_versions[0].legislation_version);
+        } else {
+          setBillVers(defaultVers[chamber.toLowerCase()]);
+        }
       } else {
         setBillVers(billVersion);
       }
@@ -63,6 +76,26 @@ function BillViewer(props) {
       );
     }
   }, [billVers]);
+  useEffect(() => {
+    // If we didn't get a bill version, default to the introduced one.
+    if (billVersion === undefined) {
+      if (bill.legislation_versions !== undefined) {
+        setBillVers(bill.legislation_versions[0].legislation_version);
+      } else {
+        setBillVers(defaultVers[chamber.toLowerCase()]);
+      }
+    } else {
+      const validVersions = lodash.map(
+        bill.legislation_versions,
+        "legislation_version"
+      );
+      if (!validVersions.includes(billVersion)) {
+        setBillVers(validVersions[0]);
+      } else {
+        setBillVers(billVersion);
+      }
+    }
+  }, [bill.legislation_versions]);
   return (
     <>
       <h3>{bill.title}</h3>Selected Version:{" "}
@@ -85,7 +118,7 @@ function BillViewer(props) {
         )}
       </select>
       <br />
-      { false ? <Checkbox label="Show Estimated Changes" /> : null}
+      {false ? <Checkbox label="Show Estimated Changes" /> : null}
       <hr />
       <div className="sidebar">
         <BillDiffSidebar
@@ -95,7 +128,7 @@ function BillViewer(props) {
           billVersion={billVers || billVersion}
         />
       </div>
-      <div className="content">
+      <div id="bill-viewer-content">
         {diffMode === true ? (
           <USCView
             release={bill.usc_release_id || "latest"}
@@ -108,11 +141,12 @@ function BillViewer(props) {
             congress={congress}
             chamber={chamber}
             billNumber={billNumber}
-            billVersion={billVers || billVersion}
+            billVersion={billVersion}
             showTooltips={true}
           />
         )}
       </div>
+
     </>
   );
 }

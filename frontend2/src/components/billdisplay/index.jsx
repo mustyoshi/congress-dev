@@ -10,19 +10,11 @@ import { getBillVersionText } from "common/api.js";
 
 // TODO: move this somewhere in scss?
 const styles = {
-  section: {
-    marginLeft: "20px",
-    marginBottom: "0px",
-  },
   "quoted-block": {
     borderWidth: "1px",
     borderStyle: "solid",
     borderColor: "gray",
     backgroundColor: "lightgray",
-  },
-  continue: {
-    marginLeft: "20px",
-    marginBottom: "0px",
   },
   unchanged: {},
 
@@ -47,6 +39,57 @@ const styles = {
   },
   sidebar: {},
 };
+function Minimap(props) {
+  const target = document.getElementById("bill-view");
+  const scrollTarget = document.getElementById("bill-viewer-content");
+  const minimap = document.getElementById("minimap");
+  const [cloned, setCloned] = useState(null);
+  const [ref, setRef] = useState(null);
+  const [styleOverride, setStyleOverride] = useState({});
+  const [highlightStyle, setHighlightStyle] = useState({});
+  useEffect(() => {
+    if (target !== null && cloned === null) {
+      const clone = target.cloneNode(true);
+      clone.id = "bill-view-clone";
+      setCloned(clone);
+    }
+  });
+  if (scrollTarget !== null) {
+    scrollTarget.onscroll = () => {
+      const mmh = document.getElementById("minimap-highlight");
+      mmh.style.top = `${scrollTarget.scrollTop * 0.9}px`;
+      mmh.style.height = `${scrollTarget.clientHeight * 0.9}px`;
+      //mmh.style.height = "calc(10vh - 30px)";
+    };
+  }
+  useEffect(() => {
+    if (cloned && ref.children.length == 1) {
+      ref.insertBefore(cloned, ref.children[0]);
+      setStyleOverride({
+        top: `${target.offsetTop}px`,
+      });
+    }
+  }, [cloned]);
+  function handleClick(event) {
+    console.log(event);
+    console.log(event.clientX);
+    console.log(event.clientY);
+    const calcPosition = (event.clientY - target.offsetTop) * 10;
+    scrollTarget.scrollTo(0, calcPosition);
+    return false;
+  }
+  return (
+    <div
+      className="minimap"
+      id="minimap"
+      ref={setRef}
+      style={styleOverride}
+      onClick={handleClick}
+    >
+      <div id="minimap-highlight" style={highlightStyle}></div>
+    </div>
+  );
+}
 function BillDisplay(props) {
   // TODO: Add minimap scrollbar
   // *TODO*: Start using the action list to render a list of parsed actions
@@ -75,24 +118,35 @@ function BillDisplay(props) {
             },
             ind
           ) => {
-            let actionStr = lodash.chain(action).map(lodash.keys).flatten().remove(x=>x!=="changed"&&x!=="parsed_cite").value().join(", ");
+            let actionStr = lodash
+              .chain(action)
+              .map(lodash.keys)
+              .flatten()
+              .remove(x => x !== "changed" && x !== "parsed_cite")
+              .value()
+              .join(", ");
             if (heading !== undefined) {
               return (
                 <div
                   name={legislation_content_id}
                   key={ind}
+                  className={`bill-content-${content_type} bill-content-section`}
                   style={
                     content_type === "legis-body"
                       ? {}
                       : styles[content_type] || styles.section
                   }
+                  className="bill-content"
                 >
-                  <Tooltip content={actionStr} disabled={actionStr === "" || props.showTooltips !== true}>
+                  <Tooltip
+                    content={actionStr}
+                    disabled={actionStr === "" || props.showTooltips !== true}
+                  >
                     <span>
                       <b>
                         {section_display} {heading}
                       </b>
-                      <p style={styles.continue}>{content_str}</p>
+                      <p className="bill-content-continue">{content_str}</p>
                     </span>
                   </Tooltip>
                   {renderRecursive({ children })}
@@ -103,18 +157,24 @@ function BillDisplay(props) {
                 <div
                   name={legislation_content_id}
                   key={ind}
+                  className={`bill-content-${content_type}  bill-content-section`}
                   style={
                     content_type === "legis-body"
                       ? {}
                       : styles[content_type] || styles.section
                   }
                 >
-                  <Tooltip content={actionStr} disabled={actionStr === "" || props.showTooltips !== true}>
-                    <span>
-                      <span style={{ fontWeight: "bolder" }}>{section_display}</span>{" "}
-                      <span>{content_str}</span>
-                    </span>
-                  </Tooltip>
+                  {section_display || content_str ? (
+                    <Tooltip
+                      content={actionStr}
+                      disabled={actionStr === "" || props.showTooltips !== true}
+                    >
+                      <span>
+                        <span style={{ fontWeight: "bolder" }}>{section_display}</span>{" "}
+                        <span>{content_str}</span>
+                      </span>
+                    </Tooltip>
+                  ) : null}
                   {renderRecursive({ children })}
                 </div>
               );
@@ -127,7 +187,14 @@ function BillDisplay(props) {
   if (textTree.loading) {
     return <SyncLoader loading={true} />;
   }
-  return <>{renderRecursive(textTree)}</>;
+  return (
+    <>
+      <div id="bill-view" className="content-holder">
+        {renderRecursive(textTree)}
+      </div>{" "}
+      <Minimap />
+    </>
+  );
 }
 
 export default BillDisplay;
